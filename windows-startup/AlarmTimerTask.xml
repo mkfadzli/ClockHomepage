@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-16"?>
+<!--
+  AlarmTimer.xml — Windows Task Scheduler import file
+
+  Uses docker-wait.bat (retry wrapper) instead of raw docker compose
+  so the container always starts even if Docker Desktop is slow to boot.
+
+  Import via:
+    schtasks /create /xml "windows-startup\AlarmTimerTask.xml" /tn "AlarmTimer"
+
+  Or use install-service.bat for automatic setup.
+-->
+<Task version="1.4" xmlns="http://schemas.microsoft.com/windows/2004/02/mit/task">
+  <RegistrationInfo>
+    <Description>Start the Alarm Timer Docker container at system boot using a retry wrapper so the homepage is always available in Firefox.</Description>
+    <URI>\AlarmTimer</URI>
+  </RegistrationInfo>
+  <Triggers>
+    <BootTrigger>
+      <Enabled>true</Enabled>
+    </BootTrigger>
+  </Triggers>
+  <Principals>
+    <Principal id="Author">
+      <RunLevel>HighestAvailable</RunLevel>
+    </Principal>
+  </Principals>
+  <Settings>
+    <AllowStartOnDemand>true</AllowStartOnDemand>
+    <Enabled>true</Enabled>
+    <Hidden>false</Hidden>
+    <RunOnlyIfNetworkAvailable>false</RunOnlyIfNetworkAvailable>
+    <StartWhenAvailable>true</StartWhenAvailable>
+    <MultipleInstancesPolicy>IgnoreNew</MultipleInstancesPolicy>
+  </Settings>
+  <Actions Context="Author">
+    <Exec>
+      <Command>cmd</Command>
+      <Arguments>/c ""C:\Users\mkfad\OneDrive\Desktop\Vite\windows-startup\docker-wait.bat" "C:\Users\mkfad\OneDrive\Desktop\Vite""</Arguments>
+    </Exec>
+  </Actions>
+</Task>

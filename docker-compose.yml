@@ -1,0 +1,26 @@
+# docker-compose.yml — Alarm Timer Firefox Homepage
+#
+# Single command deploy:
+#   docker compose up -d
+#
+# Available at http://localhost:${VITE_PORT:-5173}
+#
+# Health check is defined in the Dockerfile (HEALTHCHECK instruction).
+
+services:
+  alarm-timer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: alarm-timer
+    ports:
+      - "${VITE_PORT:-5173}:80"
+    restart: unless-stopped
+    labels:
+      - "traefik.enable=false"
+    # Resource limits (conservative — this is a static site)
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: "128M"

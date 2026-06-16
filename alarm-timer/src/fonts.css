@@ -1,0 +1,57 @@
+/* ================================================================
+   fonts.css — Self-hosted Google Fonts
+   ================================================================
+
+   Replaces the Google Fonts @import in styles.css.
+   Run download-fonts.bat first to fetch the woff2 files into
+   alarm-timer/public/fonts/.
+
+   Import this in styles.css with:
+     @import './fonts.css';
+   ================================================================ */
+
+/* DM Sans — variable weight, latin */
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/dm-sans-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/dm-sans-500.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/dm-sans-700.woff2') format('woff2');
+}
+
+/* Orbitron — geometric display, latin */
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/orbitron-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/orbitron-700.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Orbitron';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('/fonts/orbitron-900.woff2') format('woff2');
+}

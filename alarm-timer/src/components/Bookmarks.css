@@ -1,0 +1,48 @@
+/* ================================================================
+   Bookmarks — Quick AI links (text-only)
+   ================================================================ */
+
+.bookmarks-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding: 0.5rem 1rem;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.bookmark-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 1rem;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  color: var(--text-secondary);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+  transition: all var(--transition-smooth);
+  cursor: pointer;
+}
+
+.bookmark-chip:hover {
+  border-color: var(--accent-cyan);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
+}
+
+.bookmark-chip:focus-visible {
+  outline: 2px solid var(--accent-cyan);
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  .bookmark-chip {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.8rem;
+  }
+}

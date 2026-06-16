@@ -1,0 +1,44 @@
+# Docker build artifacts — keep the image small
+node_modules
+dist
+dist-ssr
+*.local
+
+# Environment (contains no secrets, but keep out of image)
+.env
+.env.*
+
+# Editor and OS junk
+.vscode
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+Thumbs.db
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Logs
+*.log
+logs
+npm-debug.log*
+
+# Dev scripts not needed in production
+run-alarm-timer.bat
+run.bat
+_get_app_lines.ps1
+
+# Docker files themselves
+Dockerfile
+docker-compose.yml
+.dockerignore
+# nginx.conf is needed in the build — DO NOT ignore
+
+# Windows startup (not needed in image)
+windows-startup
