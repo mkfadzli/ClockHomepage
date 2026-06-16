@@ -45,4 +45,4 @@ Open [http://localhost:5173](http://localhost:5173).
 
 ## License
 
-Hetnet Wireless Technologies
+Courtesy of Hetnet Wireless Technologies.
